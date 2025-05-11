@@ -1,37 +1,41 @@
-🏡 House Price Prediction App
-A user-friendly Streamlit web app that predicts house prices based on key property features like City, Area, Number of Baths, Balcony availability, and BHK. Built with pandas, scikit-learn, and Linear Regression, this app helps users estimate property prices using real estate data.
+# 🏡 House Price Prediction App
+
+An interactive **web application** built using **Streamlit** and **scikit-learn** that predicts the price of a house based on user-selected features like **City**, **Area**, **Number of Baths**, **Balcony**, and **BHK**. The model is trained on a custom housing dataset and uses **Linear Regression** for making predictions.
+
+---
 
 
-🛠 Tech Stack
-Python
+## 📌 Features
 
-pandas, NumPy – for data manipulation
+- 📂 Upload your own housing dataset (CSV format)
+- 🔍 Automatic data preprocessing and price normalization
+- 🧠 Extracts and imputes missing features like BHK
+- 🔧 Built-in feature engineering (location parsing, one-hot encoding)
+- 📈 Predicts housing prices using trained Linear Regression model
+- 💡 Simple and intuitive UI powered by **Streamlit**
 
-scikit-learn – for preprocessing and machine learning
+---
 
-Streamlit – for interactive UI and web app
+## 🛠️ Tech Stack
 
+- **Python 3.8+**
+- **pandas**, **NumPy** – data cleaning and manipulation
+- **scikit-learn** – model building and encoding
+- **Streamlit** – frontend UI
+- **re** – text parsing and feature extraction
 
-🚀 How to Run Locally
+---
 
-Clone the repository
+## 🧠 Model Details
 
-bash
-Copy
-Edit
-git clone https://github.com/Riya-Jaiswal22/HousePricePrediction.git
-cd house-price-predictor
+- Model: **Linear Regression**
+- Preprocessing:
+  - Extract `City` and `Area` from `Location`
+  - Extract and impute missing `BHK` from `Description`
+  - Convert `Price` from string format (₹L/Cr) to numeric
+  - Encode categorical variables using `OneHotEncoder`
+- 80/20 train-test split
+- Input validation to ensure only valid options are passed
 
-Install dependencies
+---
 
-pip install -r requirements.txt
-
-Or manually install:
-
-pip install pandas numpy scikit-learn streamlit
-
-Run the app
-
-streamlit run app.py
-
-Upload your CSV dataset through the interface and get price predictions!
